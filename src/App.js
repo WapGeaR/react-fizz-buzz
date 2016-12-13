@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     let list = []
 
-    for(let i = 1;i < this.state.count;i++) {
+    for(let i = 1;i <= this.state.count;i++) {
         list.push(<div>{
           (i % 15 === 0)  ?  'FizzBuzz' :
           (i % 5 === 0)   ? 'Buzz' :
