@@ -17,7 +17,7 @@ class App extends Component {
     this.handleStartButton = this.handleStartButton.bind(this)
   }
 
-  handleChangeCount = e => this.setState({prefield: e.target.value})
+  handleChangeCount = e => this.setState({prefield: Number(e.target.value)})
   handleStartButton = () => this.setState({count: this.state.prefield})
 
 
@@ -27,7 +27,7 @@ class App extends Component {
     let list = []
 
     for(let i = 1;i <= this.state.count;i++) {
-        list.push(<div>{
+        list.push(<div key={i}>{
           (i % 15 === 0)  ?  'FizzBuzz' :
           (i % 5 === 0)   ? 'Buzz' :
           (i % 3 === 0)   ? 'Fizz' :
@@ -40,14 +40,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          <input onChange={this.handleChangeCount} value={this.state.prefield}/>
-          <button onClick={this.handleStartButton}>Start</button>
+        <div className="App-intro">
+          <input type="number" id="input" onChange={this.handleChangeCount} value={this.state.prefield}/>
+          <button id="button" onClick={this.handleStartButton}>Start</button>
           <div>
             <h1>Results:</h1>
             {list}
           </div>
-        </p>
+        </div>
       </div>
     );
   }
