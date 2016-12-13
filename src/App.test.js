@@ -16,21 +16,21 @@ it('Looking for Fizz', () => {
 
 it('Looking for Buzz', () => {
   const app = shallow(<App />)
-  const fizz = <div>Buzz</div>;
-  expect(app.contains(fizz)).toEqual(true);
+  const buzz = <div>Buzz</div>;
+  expect(app.contains(buzz)).toEqual(true);
 })
 
 it('Looking for FizzBuzz is not found', () => {
   const app = shallow(<App />)
-  const fizz = <div>FizzBuzz</div>;
-  expect(app.contains(fizz)).toEqual(false);
+  const fizzbuzz = <div>FizzBuzz</div>;
+  expect(app.contains(fizzbuzz)).toEqual(false);
 })
 
 it('Change state and try to find FizzBuzz again', () => {
   const app = shallow (<App />)
   app.setState({count: 15})
-  const fizz = <div>FizzBuzz</div>;
-  expect(app.contains(fizz)).toEqual(true);
+  const fizzbuzz = <div>FizzBuzz</div>;
+  expect(app.contains(fizzbuzz)).toEqual(true);
 })
 it('Update state from input', () => {
   const app = shallow (<App />)
